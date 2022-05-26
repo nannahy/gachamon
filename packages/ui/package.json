@@ -1,68 +1,26 @@
 {
   "name": "@gachamon/ui",
   "version": "0.1.0",
-  "main": "dist/components/index.js",
+  "private": true,
+  "main": "template.json",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "typescript",
+    "eslint",
+    "prettier",
+    "react-router",
+    "react-router-dom",
+    "react-query",
+    "styled-components"
+  ],
   "files": [
-    "dist",
-    "README.md"
+    "template",
+    "template.json"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nannahy/gochamon"
-  },
-  "peerDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.1",
-    "@types/node": "^16.11.36",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
-    "typescript": "^4.7.2",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "tsc",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "clean": "rimraf dist",
-    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/preset-env": "^7.18.2",
-    "@babel/preset-react": "^7.17.12",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.2",
-    "@types/eslint": "^8.4.2",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.5",
-    "@types/styled-components": "^5.1.25",
-    "cross-env": "^7.0.3",
-    "postcss": "^8.4.14",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
   }
 }
