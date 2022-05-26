@@ -1,5 +1,9 @@
 import { useMemo } from "react";
-import { PokeDataType } from "../pages";
+import styled from "styled-components";
+
+type PokeDataType = {
+  [index: string]: any;
+};
 
 const Profile = ({
   pokeData: originPokeData,
@@ -18,13 +22,15 @@ const Profile = ({
   return (
     <>
       {pokeData ? (
-        <div className="box">
-          HELLO,
-          <br /> I'M {pokeData.name.toLocaleUpperCase()}!
-          <img
-            className="poke_img"
+        <Box className="box">
+          <title>
+            HELLO,
+            <br /> I'M {pokeData.name.toLocaleUpperCase()}!
+          </title>
+          <Image
             src={pokeData.sprites.front_default}
             onClick={onClick}
+            type={type}
           />
           {type === "detail" &&
             ["name", "weight", "height"].map((propKey) => (
@@ -33,39 +39,41 @@ const Profile = ({
               </div>
             ))}
           {type === "detail" &&
-            pokeData.stats.map(([stat, gage]) => (
+            pokeData.stats.map(([stat, gage]: [string, string]) => (
               <div>
                 {stat}:{gage}
               </div>
             ))}
-        </div>
+        </Box>
       ) : (
-        <div className="box">
+        <Box>
           CHOOSE
           <br />
           YOUR
           <br />
           POKEMON!
-        </div>
+        </Box>
       )}
-      <style jsx>{`
-        .poke_img {
-          width: 200px;
-          cursor: ${type === "default" ? "pointer" : "default"};
-        }
-        .box {
-          min-height: 300px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          font-size: 18px;
-          line-height: 1.4;
-        }
-      `}</style>
     </>
   );
 };
 
 export default Profile;
+
+const Image = styled.img<{ type: string }>`
+  width: 200px;
+  cursor: ${({ type }) => (type === "default" ? "pointer" : "default")};
+`;
+
+const Box = styled.div`
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.4;
+  title {
+    font-size: 18px;
+  }
+`;

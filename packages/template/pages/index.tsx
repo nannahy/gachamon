@@ -5,9 +5,8 @@ import {
   getPokemon,
   getPokemonData,
   getPokemonDataDetail,
-} from "@gachamon/controller/api";
-import Profile from "../components/Profile";
-import Button from "../components/Button";
+} from "@gachamon/controller";
+import { Button, Profile } from "@gachamon/ui";
 import { useRouter } from "next/router";
 
 const POKEMON: [number, string][] = [
