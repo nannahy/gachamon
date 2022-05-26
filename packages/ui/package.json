@@ -1,7 +1,7 @@
 {
   "name": "@gachamon/ui",
   "version": "0.1.0",
-  "main": "dist/index.ts",
+  "main": "dist/components/index.js",
   "files": [
     "dist",
     "README.md"
@@ -16,8 +16,6 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.1",
     "@types/node": "^16.11.36",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -27,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rimraf dist",
@@ -55,7 +53,16 @@
     "@babel/cli": "^7.17.10",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/eslint": "^8.4.2",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.5",
     "@types/styled-components": "^5.1.25",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.14",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }

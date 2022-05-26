@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import Profile from "../../components/Profile";
+import { Profile } from "@gachamon/ui";
 
 const DetailProfile = () => {
   const router = useRouter();

@@ -23,10 +23,10 @@ const Profile = ({
     <>
       {pokeData ? (
         <Box className="box">
-          <title>
+          <p>
             HELLO,
             <br /> I'M {pokeData.name.toLocaleUpperCase()}!
-          </title>
+          </p>
           <Image
             src={pokeData.sprites.front_default}
             onClick={onClick}
@@ -62,7 +62,8 @@ export default Profile;
 
 const Image = styled.img<{ type: string }>`
   width: 200px;
-  cursor: ${({ type }) => (type === "default" ? "pointer" : "default")};
+  cursor: ${({ type }: { type: string }) =>
+    type === "default" ? "pointer" : "default"};
 `;
 
 const Box = styled.div`
@@ -73,7 +74,7 @@ const Box = styled.div`
   justify-content: center;
   text-align: center;
   line-height: 1.4;
-  title {
+  p {
     font-size: 18px;
   }
 `;

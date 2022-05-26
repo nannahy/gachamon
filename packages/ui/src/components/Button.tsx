@@ -6,7 +6,7 @@ const Button = styled.button<{ color: string }>`
   border: 3px solid black;
   border-radius: 25px;
   cursor: pointer;
-  background-color: ${({ color }) => color};
+  background-color: ${({ color }: { color: string }) => color};
 `;
 
 export default Button;
