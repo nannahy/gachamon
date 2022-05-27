@@ -12,7 +12,7 @@ const Profile = ({
 }: {
   pokeData: { default: PokeDataType; detail: PokeDataType } | null;
   type?: "default" | "detail";
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   const pokeData = useMemo(
     () => originPokeData?.[type],
